@@ -1,1 +1,29 @@
-<button [routerLink]="['/add-product']">Ajouter un produit</button>
+<div class="container mt-4">
+  <!-- Bouton pour ajouter un produit -->
+  <div class="mb-4">
+    <button [routerLink]="['/add-product']" class="btn btn-primary">Ajouter un produit</button>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let product of userProducts" class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            Prix : {{ +product.price | number:'1.2-2' }}<br>
+            Quantité : {{ product.quantity }}<br>
+            Catégorie : {{ product.category_id.name }}<br>
+            Posté par : {{ product.user_id.firstname }}
+          </p>
+          <div class="d-flex justify-content-between">
+
+            <button class="btn btn-warning" (click)="editProduct(product.id)">Modifier</button>
+            
+
+            <button class="btn btn-danger" (click)="deleteProduct(product.id)">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

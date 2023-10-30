@@ -1,1 +1,39 @@
-<p>add-product works!</p>
+<form [formGroup]="productForm" (ngSubmit)="addProduct()">
+
+  <div class="form-group">
+    <label for="name">Nom du produit</label>
+    <input type="text" id="name" class="form-control" formControlName="name">
+  </div>
+
+  <div class="form-group">
+    <label for="price">Prix</label>
+    <input type="number" id="price" class="form-control" formControlName="price">
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Quantité</label>
+    <input type="number" id="quantity" class="form-control" formControlName="quantity">
+  </div>
+
+  <div class="form-group">
+    <label for="category">Catégorie</label>
+    <select id="category" class="form-control" formControlName="category_id" (change)="onCategoryChange($event)">
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      <option value="newCategory">Ajouter une nouvelle catégorie</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Ajouter</button>
+
+</form>
+
+<div *ngIf="showModal" class="custom-modal">
+  <div class="modal-content">
+    <h5>Ajouter une nouvelle catégorie</h5>
+    <form [formGroup]="categoryForm">
+      <input type="text" class="form-control" placeholder="Entrez le nom de la nouvelle catégorie" formControlName="name">
+      <button type="button" class="btn btn-secondary mt-2" (click)="closeModal()">Fermer</button>
+      <button type="button" class="btn btn-primary mt-2" (click)="addNewCategory()">Ajouter</button>
+    </form>
+  </div>
+</div>

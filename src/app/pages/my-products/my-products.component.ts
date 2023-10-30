@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-my-products',
   templateUrl: './my-products.component.html',
   styleUrls: ['./my-products.component.css']
 })
-export class MyProductsComponent {
+export class MyProductsComponent implements OnInit {
+  userProducts: Product[] = [];
 
+  constructor(private productService: ProductService) { }
+
+  ngOnInit(): void {
+    const user_Id = localStorage.getItem('user_id');
+    if (user_Id) { 
+      const userId = +user_Id; 
+      this.productService.getProductsByUser(userId).subscribe(products => {
+        console.log('LES PRODUITS DE USER', products)
+        console.log('prix du premier produit', products[0].price)
+        this.userProducts = products;
+      });
+    } else {
+      console.error('user_id non trouvé dans le localStorage');
+    }
+  }
+
+  editProduct(productId:number){
+
+  }
+
+  deleteProduct(productId:number){}
 }

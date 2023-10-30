@@ -15,12 +15,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string) {
-    return this.http.post<{ access_token: string, user_id: number, sub: string }>(this.bddUrl + '/auth/login', { username, password })
+  login(email: string, password: string) {
+    return this.http.post<{ accessToken: string, user_id: number, sub: string }>(this.bddUrl + '/auth/login', { email, password })
       .pipe(
         tap(response => {
-          // console.log(response)
-          localStorage.setItem('access_token', response.access_token);
+          localStorage.setItem('access_token', response.accessToken);
           console.log('prénom personne co', response.sub)
           if (response.user_id && Number.isFinite(response.user_id)) {
             localStorage.setItem('user_id', `${response.user_id}`);

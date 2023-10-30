@@ -31,13 +31,13 @@ export class LoginComponent {
 
   OnConnect() {
     if (this.connexion.valid) {
+      console.log(this.connexion.value,'VALEUR DE FORMULAIRE DE CONNEXION')
       let email = this.connexion.value.email;
       let password = this.connexion.value.password;
       this.authService.login(email, password).subscribe({
         next: (response: any) => {
           console.log('Réponse complète du serveur :', response);
           if (response && response.accessToken) {
-            // Stocker le token dans le localStorage
             localStorage.setItem('access_token', response.accessToken);
 
             console.log('Connexion réussie et token stocké!');

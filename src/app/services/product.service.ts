@@ -29,4 +29,10 @@ export class ProductService {
   addProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.bddUrl, product, { headers: this.getHeaders() });
   }
+
+
+  getProductsByUser(userId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.bddUrl}/user/${userId}`, { headers: this.getHeaders() });
+  }
+
 }
