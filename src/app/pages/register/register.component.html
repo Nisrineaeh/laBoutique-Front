@@ -1,1 +1,116 @@
-<p>register works!</p>
+<div class="page_form">
+
+
+  <div class="d-flex justify-content-center form_group">
+    <div class="col-md-6 col-sm-12 form_group p-3 mb-5 rounded">
+      <form [formGroup]="addUser" (ngSubmit)="onSubmit()" class="formcontainer">
+        <h1>Inscription</h1>
+
+          <input
+            formControlName="name"
+            class="form-control shadow"
+            id="inputLastName"
+            placeholder="Nom"
+            [ngClass]="{
+              'is-invalid':
+                addUser.get('name')?.touched &&
+                addUser.get('name')?.invalid
+            }"
+          />
+          <div
+            *ngIf="
+              addUser.get('name')?.touched &&
+              addUser.get('name')?.invalid
+            "
+            class="invalid-feedback"
+          >
+            Le nom est requis.
+          </div>
+
+
+          <input
+            formControlName="firstname"
+            class="form-control shadow"
+            id="inputFirstname"
+            placeholder="Prénom"
+            [ngClass]="{
+              'is-invalid':
+                addUser.get('firstname')?.touched &&
+                addUser.get('firstname')?.invalid
+            }"
+          />
+          <div
+            *ngIf="
+              addUser.get('firstname')?.touched &&
+              addUser.get('firstname')?.invalid
+            "
+            class="invalid-feedback"
+          >
+            Le prénom est requis.
+          </div>
+
+
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control shadow"
+            id="inputEmail"
+            placeholder=" E-mail"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            [ngClass]="{
+              'is-invalid':
+                addUser.get('email')?.touched && addUser.get('email')?.invalid
+            }"
+          />
+          <div
+            *ngIf="
+              addUser.get('email')?.touched && addUser.get('email')?.invalid
+            "
+            class="invalid-feedback"
+          >
+            Format d'adresse e-mail invalide.
+          </div>
+
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control shadow"
+            id="exampleInputPassword1"
+            placeholder="Mot de Passe"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+            [ngClass]="{
+              'is-invalid':
+                addUser.get('password')?.touched &&
+                addUser.get('password')?.invalid
+            }"
+          />
+          <div
+            *ngIf="
+              addUser.get('password')?.touched &&
+              addUser.get('password')?.invalid
+            "
+            class="invalid-feedback"
+          >
+            Le mot de passe doit contenir au moins 8 caractères, une majuscule,
+            une minuscule et un chiffre.
+          </div>
+
+     
+  
+         
+
+        
+
+        <div class="btn_signin">
+          <button
+            type="submit"
+            class="btn connexion"
+            [disabled]="addUser.invalid"
+          >
+            S'inscrire
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
