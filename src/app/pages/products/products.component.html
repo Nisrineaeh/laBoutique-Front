@@ -1,1 +1,22 @@
-<p>products works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card mb-4 shadow-sm">
+        
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            Prix : {{ product.price }}<br>
+            Quantité : {{ product.quantity }}<br>
+            Catégorie: {{ product.category_id.name }}<br>
+            Posté par : {{ product.user_id.firstname }}
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-sm btn-outline-secondary" (click)="loading()">Voir</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

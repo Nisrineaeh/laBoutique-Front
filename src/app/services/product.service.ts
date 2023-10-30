@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product';
@@ -12,7 +12,17 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('access_token');
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', 'Bearer ' + token);
+    }
+    return headers;
+  }
+
+
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.bddUrl);
+    return this.http.get<Product[]>(this.bddUrl, {headers: this.getHeaders()});
   }
 }
