@@ -1,0 +1,15 @@
+img {
+   width: 5% ;
+}
+
+.bg-light{
+    background-color: #EEE8E8!important;
+}
+
+a{
+    color: var(--dark-color);
+}
+
+a:hover{
+    font-weight: bold;
+}
