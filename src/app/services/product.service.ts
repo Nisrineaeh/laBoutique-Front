@@ -25,4 +25,8 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.bddUrl, {headers: this.getHeaders()});
   }
+
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.bddUrl, product, { headers: this.getHeaders() });
+  }
 }
