@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { EditProductModalComponent } from 'src/app/components/edit-product-modal/edit-product-modal.component';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -9,6 +10,8 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class MyProductsComponent implements OnInit {
   userProducts: Product[] = [];
+
+  @ViewChild('editModal') editModal!: EditProductModalComponent;
 
   constructor(private productService: ProductService) { }
 
@@ -26,8 +29,8 @@ export class MyProductsComponent implements OnInit {
     }
   }
 
-  editProduct(productId:number){
-
+  editProduct(product:Product){
+    this.editModal.open(product)
   }
 
   deleteProduct(productId:number){}

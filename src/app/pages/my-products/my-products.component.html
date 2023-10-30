@@ -1,5 +1,4 @@
 <div class="container mt-4">
-  <!-- Bouton pour ajouter un produit -->
   <div class="mb-4">
     <button [routerLink]="['/add-product']" class="btn btn-primary">Ajouter un produit</button>
   </div>
@@ -17,7 +16,7 @@
           </p>
           <div class="d-flex justify-content-between">
 
-            <button class="btn btn-warning" (click)="editProduct(product.id)">Modifier</button>
+            <button class="btn btn-warning" (click)="editProduct(product)">Modifier</button>
             
 
             <button class="btn btn-danger" (click)="deleteProduct(product.id)">Supprimer</button>
@@ -27,3 +26,5 @@
     </div>
   </div>
 </div>
+
+<app-edit-product-modal #editModal></app-edit-product-modal>
