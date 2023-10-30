@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container text-center m-0 p-0">
+    <div class="row align-items-center justify-content-between">
+
+
+<div class="center">
+
+<form [formGroup]="connexion" (ngSubmit)="OnConnect()" class="col-12 col-lg-4">
+ 
+
+  <div class="flex-column  m-5 ">
+    <h1>Connexion</h1>
+    <label for="FormControlInput1" class="form-label" ></label>
+    <input type="text" class="form-control shadow" id="FormControlInput1" placeholder="Votre email" formControlName="email" name="email">
+
+
+  <label for="inputPassword5" class="form-label"></label>
+  <input type="password" id="inputPassword5" formControlName="password" class="form-control shadow" aria-describedby="passwordHelpBlock" placeholder="Votre mot de passe" name="password">
+
+</div><div><button type="submit" class="btn connexion" [disabled]="!connexion.valid">Se connecter</button></div>
+<p [routerLink]="['/register']">Pas encore inscrit ? C'est par ici</p>
+</form>
+
+</div>

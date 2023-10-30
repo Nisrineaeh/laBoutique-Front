@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
