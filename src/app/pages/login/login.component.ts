@@ -30,7 +30,7 @@ export class LoginComponent {
     });
   }
 
-  OnConnect() {
+  onConnect() {
     if (this.connexion.valid) {
       console.log(this.connexion.value,'VALEUR DE FORMULAIRE DE CONNEXION')
       let email = this.connexion.value.email;
