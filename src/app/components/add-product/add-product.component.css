@@ -18,3 +18,17 @@
     width: 80%;
     max-width: 500px;
   }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .add{
+    margin-top: 20px;
+  }
+
+  .in{
+    width: 100%;
+  }

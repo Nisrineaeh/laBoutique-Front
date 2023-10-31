@@ -1,3 +1,4 @@
+<div class="center">
 <form [formGroup]="productForm" (ngSubmit)="addProduct()">
 
   <div class="form-group">
@@ -23,15 +24,15 @@
     </select>
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Ajouter</button>
+  <button type="submit" class="btn btn-primary add" [disabled]="!productForm.valid">Ajouter</button>
 
 </form>
-
+</div>
 <div *ngIf="showModal" class="custom-modal">
   <div class="modal-content">
     <h5>Ajouter une nouvelle catégorie</h5>
     <form [formGroup]="categoryForm">
-      <input type="text" class="form-control" placeholder="Entrez le nom de la nouvelle catégorie" formControlName="name">
+      <input type="text" class="form-control in" placeholder="Entrez le nom de la nouvelle catégorie" formControlName="name">
       <button type="button" class="btn btn-secondary mt-2" (click)="closeModal()">Fermer</button>
       <button type="button" class="btn btn-primary mt-2" (click)="addNewCategory()">Ajouter</button>
     </form>

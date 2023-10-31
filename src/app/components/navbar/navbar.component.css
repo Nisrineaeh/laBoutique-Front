@@ -13,3 +13,11 @@ a{
 a:hover{
     font-weight: bold;
 }
+
+
+@media screen and (max-width: 576px) {
+  
+    img{
+        width: 15%;
+    }
+}

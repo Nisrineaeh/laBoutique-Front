@@ -17,7 +17,7 @@
   <input type="password" id="inputPassword5" formControlName="password" class="form-control shadow" aria-describedby="passwordHelpBlock" placeholder="Votre mot de passe" name="password">
 
 </div><div><button type="submit" class="btn connexion" [disabled]="!connexion.valid">Se connecter</button></div>
-<p [routerLink]="['/register']">Pas encore inscrit ? C'est par ici</p>
+<div class="top"><a [routerLink]="['/register']">Pas encore inscrit ? C'est par ici</a></div>
 </form>
 
 </div>
