@@ -66,6 +66,7 @@ export class EditProductModalComponent implements OnInit {
         () => {
           this.close();
           alert('Produit mis à jour avec succès!');
+          location.reload()
         },
         error => {
           console.error('Erreur lors de la mise à jour du produit', error);

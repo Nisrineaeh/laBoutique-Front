@@ -1,0 +1,8 @@
+<div *ngIf="isOpen" class="custom-modal">
+  <div class="modal-content">
+    <h5>Confirmation</h5>
+    <p>Voulez-vous vraiment supprimer ce produit?</p>
+    <button type="button" class="btn btn-danger" (click)="confirm()">Oui</button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">Non</button>
+  </div>
+</div>

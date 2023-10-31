@@ -19,7 +19,7 @@
             <button class="btn btn-warning" (click)="editProduct(product)">Modifier</button>
             
 
-            <button class="btn btn-danger" (click)="deleteProduct(product.id)">Supprimer</button>
+            <button class="btn btn-danger" (click)="onDelete(product.id)">Supprimer</button>
           </div>
         </div>
       </div>
@@ -28,3 +28,7 @@
 </div>
 
 <app-edit-product-modal #editModal></app-edit-product-modal>
+<app-confirmation-modal
+  (confirmEvent)="deleteProduct()"
+  (cancelEvent)="onCancelDelete()">
+</app-confirmation-modal>

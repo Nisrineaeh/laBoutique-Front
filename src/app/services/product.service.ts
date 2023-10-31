@@ -39,4 +39,8 @@ export class ProductService {
     return this.http.patch<Product>(`${this.bddUrl}/${product.id}`, product, {headers: this.getHeaders()})
   }
 
+  deleteProduct(productId: number){
+    return this.http.delete(`${this.bddUrl}/${productId}`, { headers: this.getHeaders() })
+  }
+
 }

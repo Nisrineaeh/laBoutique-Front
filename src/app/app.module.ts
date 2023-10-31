@@ -13,6 +13,7 @@ import { MyProductsComponent } from './pages/my-products/my-products.component';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { EditProductModalComponent } from './components/edit-product-modal/edit-product-modal.component';
+import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditProductModalComponent } from './components/edit-product-modal/edit-
     MyProductsComponent,
     AccueilComponent,
     AddProductComponent,
-    EditProductModalComponent
+    EditProductModalComponent,
+    ConfirmationModalComponent
   ],
   imports: [
     BrowserModule,
