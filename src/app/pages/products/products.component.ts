@@ -20,6 +20,6 @@ export class ProductsComponent implements OnInit {
   }
 
   loading(){
-    alert('Le site n\'a eu que 48heures pour voir le jour ça arrive!')
+    alert('Le site n\'a eu que 48heures pour voir le jour ce n\'est pas dans le MVP, bientôt disponible !')
   }
 }
