@@ -14,6 +14,7 @@ import { AccueilComponent } from './pages/accueil/accueil.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { EditProductModalComponent } from './components/edit-product-modal/edit-product-modal.component';
 import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ConfirmationModalComponent } from './components/confirmation-modal/conf
     AccueilComponent,
     AddProductComponent,
     EditProductModalComponent,
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
