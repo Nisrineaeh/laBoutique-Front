@@ -10,14 +10,24 @@
   <div class="flex-column  m-5 ">
     <h1>Connexion</h1>
     <label for="FormControlInput1" class="form-label" ></label>
-    <input type="text" class="form-control shadow" id="FormControlInput1" placeholder="Votre email" formControlName="email" name="email">
-
+    <input type="text" class="form-control" id="FormControlInput1" placeholder="Votre email" formControlName="email" name="email">
+    <div *ngIf="connexion.get('email')?.invalid && connexion.get('email')?.touched" class="text-danger">
+      L'email est requis.
+    </div>
 
   <label for="inputPassword5" class="form-label"></label>
-  <input type="password" id="inputPassword5" formControlName="password" class="form-control shadow" aria-describedby="passwordHelpBlock" placeholder="Votre mot de passe" name="password">
+  <input type="password" id="inputPassword5" formControlName="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Votre mot de passe" name="password">
+     <div *ngIf="connexion.get('password')?.invalid && connexion.get('password')?.touched" class="text-danger">
+      Le mot de passe est requis.
+    </div>
+
 
 </div><div><button type="submit" class="btn connexion" [disabled]="!connexion.valid">Se connecter</button></div>
 <div class="top"><a [routerLink]="['/register']">Pas encore inscrit ? C'est par ici</a></div>
+
+<div *ngIf="loginError" class="alert alert-danger mt-3">
+    {{ loginError }}
+  </div>
 </form>
 
 </div>

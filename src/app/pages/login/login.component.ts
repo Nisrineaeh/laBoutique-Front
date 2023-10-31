@@ -12,6 +12,7 @@ export class LoginComponent {
   username!: string;
   password!: string;
   connexion!: FormGroup;
+  loginError!: string;
 
   constructor(
     private router: Router,
@@ -48,6 +49,7 @@ export class LoginComponent {
         },
         error: (error: any) => {
           console.error('Erreur lors de la connexion:', error);
+          this.loginError = "Les champs renseignés ne sont pas corrects.";
         },
       });
     }
