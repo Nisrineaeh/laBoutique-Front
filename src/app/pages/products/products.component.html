@@ -1,33 +1,40 @@
+
 <div class="container">
-  <div class="row">
-    <div class="mb-4">
+  <div class="mb-4">
     <button [routerLink]="['/add-product']" class="btn btn-primary">Ajouter un produit</button>
   </div>
-    <div class="col-md-4" *ngFor="let product of products">
-      <div class="card mb-4 shadow-sm">
-        
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">
-            Prix (euros) : {{ product.price }}<br>
-            Quantité : {{ product.quantity }}<br>
-            Catégorie: {{ product.category_id.name }}
-          </p>
-          <div class="d-flex justify-content-between">
 
-            <button class="btn btn-warning" (click)="editProduct(product)">Modifier</button>
-            
-
-            <button class="btn btn-danger" (click)="onDelete(product.id)">Supprimer</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Prix</th>
+          <th>Qté</th>
+          <th>Cat.</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }} €</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.category_id.name }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm mr-2" (click)="editProduct(product)">Modif.</button>
+            <button class="btn btn-danger btn-sm" (click)="onDelete(product.id)">Suppr.</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
 
-<app-edit-product-modal #editModal></app-edit-product-modal>
-<app-confirmation-modal
-  (confirmEvent)="deleteProduct()"
-  (cancelEvent)="onCancelDelete()">
-</app-confirmation-modal>
+  <app-edit-product-modal #editModal></app-edit-product-modal>
+  <app-confirmation-modal
+    (confirmEvent)="deleteProduct()"
+    (cancelEvent)="onCancelDelete()">
+  </app-confirmation-modal>
+</div>
