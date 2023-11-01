@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <div class="mb-4">
+    <button [routerLink]="['/add-product']" class="btn btn-primary">Ajouter un produit</button>
+  </div>
     <div class="col-md-4" *ngFor="let product of products">
       <div class="card mb-4 shadow-sm">
         
@@ -8,15 +11,23 @@
           <p class="card-text">
             Prix (euros) : {{ product.price }}<br>
             Quantité : {{ product.quantity }}<br>
-            Catégorie: {{ product.category_id.name }}<br>
-            Posté par : {{ product.user_id.firstname }}
+            Catégorie: {{ product.category_id.name }}
           </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <button class="btn btn-sm btn-outline-secondary" (click)="loading()">Voir</button>
+          <div class="d-flex justify-content-between">
+
+            <button class="btn btn-warning" (click)="editProduct(product)">Modifier</button>
             
+
+            <button class="btn btn-danger" (click)="onDelete(product.id)">Supprimer</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-edit-product-modal #editModal></app-edit-product-modal>
+<app-confirmation-modal
+  (confirmEvent)="deleteProduct()"
+  (cancelEvent)="onCancelDelete()">
+</app-confirmation-modal>

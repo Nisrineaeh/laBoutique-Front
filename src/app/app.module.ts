@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { MyProductsComponent } from './pages/my-products/my-products.component';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { EditProductModalComponent } from './components/edit-product-modal/edit-product-modal.component';
@@ -23,7 +22,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RegisterComponent,
     LoginComponent,
     ProductsComponent,
-    MyProductsComponent,
     AccueilComponent,
     AddProductComponent,
     EditProductModalComponent,

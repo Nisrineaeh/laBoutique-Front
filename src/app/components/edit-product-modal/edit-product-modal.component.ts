@@ -21,8 +21,7 @@ export class EditProductModalComponent implements OnInit {
       name: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
       quantity: ['', [Validators.required, Validators.min(0)]],
-      category: ['', Validators.required],
-      postedBy: [{ value: '', disabled: true }, Validators.required]
+      category: ['', Validators.required]
     });
   }
 
@@ -43,7 +42,6 @@ export class EditProductModalComponent implements OnInit {
       price: product.price,
       quantity: product.quantity,
       category: product.category_id.id,
-      postedBy: product.user_id.firstname
     });
     this.isOpen = true;
   }

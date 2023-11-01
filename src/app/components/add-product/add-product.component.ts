@@ -66,7 +66,7 @@ export class AddProductComponent implements OnInit {
         alert('Produit ajouté avec succès!');
         this.productForm.reset();
         this.productForm.controls['user_id'].setValue(localStorage.getItem('user_id'));
-        this.router.navigate(['/my-products']);
+        this.router.navigate(['/products']);
       });
     } else {
       alert('Veuillez remplir tous les champs correctement.');
