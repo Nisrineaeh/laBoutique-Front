@@ -50,7 +50,7 @@ export class EditProductModalComponent implements OnInit {
     this.isOpen = false;
   }
 
-  submit() {
+  onSubmit() {
     console.log(this.editProductForm.value, 'FOOORMS')
     if (this.editProductForm.valid) {
       const updatedProduct = {

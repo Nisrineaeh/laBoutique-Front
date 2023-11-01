@@ -1,7 +1,7 @@
 <div *ngIf="isOpen" class="modal-background" (click)="close()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <h2>Modifier le produit</h2>
-    <form [formGroup]="editProductForm" (ngSubmit)="submit()">
+    <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label>Nom du produit</label>
     <input formControlName="name" class="form-control" />
