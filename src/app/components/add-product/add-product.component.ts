@@ -33,7 +33,6 @@ export class AddProductComponent implements OnInit {
       name: new FormControl('', Validators.required),
       price: new FormControl(null, Validators.required),
       quantity: new FormControl(null, Validators.required),
-      user_id: new FormControl(localStorage.getItem('user_id'), Validators.required),
       category_id: new FormControl(null, Validators.required),
       newCategory: new FormControl('')
     });
