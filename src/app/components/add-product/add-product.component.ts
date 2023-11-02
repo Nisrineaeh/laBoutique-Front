@@ -64,7 +64,6 @@ export class AddProductComponent implements OnInit {
       this.productService.addProduct(this.productForm.value).subscribe(data => {
         alert('Produit ajouté avec succès!');
         this.productForm.reset();
-        this.productForm.controls['user_id'].setValue(localStorage.getItem('user_id'));
         this.router.navigate(['/products']);
       });
     } else {
